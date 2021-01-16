@@ -4,12 +4,16 @@ const htmlToText = require('html-to-text');
 const pug = require('pug');
 const util = require('util');
 
+if (process.env.NODE_ENV === 'development') {
+  require('dotenv').config();
+}
+
 let transport = nodemailer.createTransport({
   host: 'smtp.mailtrap.io',
   port: 2525,
   auth: {
-    user: '9b9301fbef146f',
-    pass: '850ae3d9f902db'
+    user: process.env.MAILER_USER,
+    pass: process.env.MAILER_PASS
   }
 })
 
