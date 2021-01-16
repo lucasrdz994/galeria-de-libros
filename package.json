@@ -1,0 +1,49 @@
+{
+  "name": "galeria-de-libros",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "watch": "webpack --w --mode development",
+    "server": "nodemon index.js",
+    "dev": "cross-env NODE_ENV=development concurrently \" npm run watch \" \" npm run server \" ",
+    "start": "cross-env NODE_ENV=production node index.js",
+    "postinstall": "webpack"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.21.1",
+    "bcrypt-nodejs": "0.0.3",
+    "cloudinary": "^1.23.0",
+    "connect-flash": "^0.1.1",
+    "cookie-parser": "^1.4.5",
+    "cross-env": "^7.0.3",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "express-session": "^1.17.0",
+    "html-to-text": "^5.1.1",
+    "juice": "^6.0.0",
+    "mongoose": "^5.11.12",
+    "mongoose-unique-validator": "^2.0.3",
+    "multer": "^1.4.2",
+    "multer-storage-cloudinary": "^2.2.1",
+    "nodemailer": "^6.4.17",
+    "passport": "^0.4.1",
+    "passport-local": "^1.0.0",
+    "pug": "^2.0.4",
+    "shortid": "^2.2.16",
+    "sweetalert2": "^9.17.2"
+  },
+  "devDependencies": {
+    "concurrently": "^5.1.0",
+    "css-loader": "^3.4.2",
+    "mini-css-extract-plugin": "^0.9.0",
+    "node-sass": "^4.13.1",
+    "nodemon": "^2.0.7",
+    "sass-loader": "^8.0.2",
+    "webpack": "^4.46.0",
+    "webpack-cli": "^3.3.11"
+  }
+}

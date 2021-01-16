@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+html(lang="en")
+  include includes/head
+  body
+    main
+      h1 #{pagina}
+      if error
+        span.alerta #{error}
+      if correcto
+        span.alerta #{correcto}
+      form(action='' method="POST")
+        input(type="text" placeholder="Email" name="email" value=`${email || ''}`)
+        input(type="password" placeholder="Contraseña" name="password" value=`${password || ''}`)
+        button.boton(type="submit") Iniciar sesión
+        a(href="/crearCuenta") Si no tenes cuenta podes crear una nueva.
+        a(href="/reestablecer") Olvidaste tu contraseña?

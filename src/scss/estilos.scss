@@ -1,0 +1,134 @@
+@import 'reset';
+
+// colores
+$destacado: #46bda9;
+$grisClaro: #ebebeb;
+$grisOscuro: #242424;
+$alerta: #fffed1;
+$alerta2: #fff93d;
+
+html {
+  box-sizing: border-box;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  color: $grisOscuro;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+:root {
+  font-size: 16px;
+}
+
+// elementos
+a {
+  text-decoration: none;
+  color: $grisOscuro;
+}
+.boton {
+  color: #46bda9;
+  padding: 10px 15px;
+  border-radius: 5px;
+  border: 2px solid $destacado;
+  text-decoration: none;
+  font-size: 1rem;
+  background: none;
+  cursor: pointer;
+}
+
+.cerrarSesion {
+  margin-left: 10px;
+}
+
+span.alerta {
+  padding: 20px;
+  border-radius: 5px;
+  border: 2px solid $alerta2;
+  display: block;
+  margin: 20px 0;
+  background: $alerta;
+}
+
+form {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  input, textarea {
+    border: 2px solid $grisClaro;
+    border-radius: 5px;
+    padding: 10px 15px;
+    font-size: 1rem;
+    margin-bottom: 10px;
+  }
+  button {
+    align-self: center;
+  }
+  .libroImgActual {
+    width: 50px;
+    height: auto;
+  }
+}
+
+header {
+  background: $grisClaro;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 20%;
+  h2 {
+    font-size: 1.2rem;
+  }
+}
+
+main {
+  padding: 20px 20%;
+  h1 {
+    font-size: 1.5rem;
+  }
+}
+
+.libros {
+  display: flex;
+  flex-direction: column;
+  margin: 20px 0;
+  .item {
+    border: 2px solid $grisClaro;
+    border-radius: 5px;
+    padding-top: 20px;
+    margin-bottom: 20px;
+    .info {
+      display: flex;
+      img {
+        height: 150px;
+        margin-left: 20px;
+      }
+    }
+    &.leido {
+      border: 2px solid $destacado;
+    }
+    h3 {
+      font-size: 1.2rem;
+      margin-bottom: 10px;
+      padding: 0 20px;
+    }
+    p {
+      margin: 10px 0;
+      line-height: 1.25;
+      padding: 0 20px;
+    }
+    span.acciones {
+      display: flex;
+      justify-content: flex-end;
+      background: $grisClaro;
+      padding: 20px;
+      margin-top: 20px;
+      span {
+        margin-left: 30px;
+        cursor: pointer;
+        &.noleido {
+          color: $destacado;
+        }
+      }
+    }
+  }
+}

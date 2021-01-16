@@ -1,0 +1,8 @@
+extends layout
+
+include mixins/formLibros
+
+block contenido
+  main
+    h1 #{pagina}
+    +formularioLibro(libro)

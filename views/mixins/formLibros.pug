@@ -1,0 +1,12 @@
+mixin formularioLibro(libro = {})
+  form(action=`/libro/${libro.id || ''}` method="POST" enctype="multipart/form-data")
+    input(type="text" placeholder="Titulo del libro" name="titulo" value=`${libro.titulo || ''}`)
+    input(type="number" placeholder="Año de la edición" name="edicion" value=`${libro.edicion || ''}`)
+    input(type="number" step="0.01" placeholder="Precio" name="precio" value=`${libro.precio || ''}`)
+    textarea(cols="30" rows="10" placeholder="Descripción del libro" name="descripcion") #{libro.descripcion || ''}
+    if !libro.imagen
+      input(type="file", name="imagen")
+    //- if libro.imagen
+    //-   a.libroImgActual(href="")
+    //-     img(src=`/dist/uploads/${libro.imagen}`, alt="")
+    button.boton(type="submit") #{libro.id ? 'Editar libro!' : 'Agregar libro!'}

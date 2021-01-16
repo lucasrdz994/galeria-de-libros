@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+html(lang="en")
+  include includes/head
+  body
+    main
+      h1 #{pagina}
+      form(action='' method="POST")
+        input(type="text" placeholder="Email" name="email" value=`${email || ''}`)
+        input(type="password" placeholder="Contraseña" name="password" value=`${password || ''}`)
+        button.boton(type="submit") Crear cuenta
+        a(href="/iniciarSesion") Si ya tenes cuenta podes iniciar sesión.

@@ -1,0 +1,25 @@
+extends layout
+block contenido
+  main
+    h1 Mis libros
+    if libros.length
+      .libros
+        each libro in libros
+          .item(data-id=`${libro.id}` class=`${libro.leido ? 'leido' : ''}`)
+            .info
+              img(src=`${libro.imagen}`, alt="")
+              .detalles
+                h3 #{libro.titulo}
+                p Edición: #{libro.edicion}
+                p Precio: $#{libro.precio}
+                p
+                  | #{libro.descripcion}
+            span.acciones
+              if libro.leido
+                span.estado Marcar como no leido
+              else
+                span.estado.noleido Marcar como leido
+              span.editar Editar libro
+              span.eliminar Eliminar libro
+    else
+      span.alerta No hay libros
